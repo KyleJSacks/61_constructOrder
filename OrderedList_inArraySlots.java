@@ -41,12 +41,15 @@ public class OrderedList_inArraySlots
      private int champIndex( ArrayList<Integer> challengers) {
         	int smallest = Integer.MAX_VALUE;
 		int index = 0;
+		int sindex = -1;
 		while(index < challengers.size()){
-			if (challengers.get(index) < smallest) smallest = challengers.get(index);
+			if (challengers.get(index) < smallest){ smallest = challengers.get(index);
+								sindex = index;
+			}
 
 			index++;
 		}
-		return challengers.indexOf(smallest);
+		return sindex;
      }
 
 
